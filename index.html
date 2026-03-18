@@ -5,375 +5,685 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Julian Pérez | Frontend Developer – React & TypeScript</title>
+    <meta name="description" content="Julian Pérez, Desarrollador Frontend especializado en React y TypeScript. Experiencia real en pasantías en Bewise y Kaizen Software. Creador de Shopian SaaS.">
+    <meta name="keywords" content="Julian Pérez, desarrollador frontend, React, TypeScript, NestJS, portfolio, Buenos Aires, Bewise, Kaizen, Shopian">
+    <meta name="author" content="Julian Pérez">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b0f19">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Julian Pérez | Frontend Developer">
+    <meta property="og:description" content="Portfolio de Julian Pérez – Frontend Developer con experiencia real y creador del SaaS Shopian.">
+    <meta property="og:image" content="img/Julian Programador.jpg">
+    <meta property="og:locale" content="es_AR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Julian Pérez | Frontend Developer">
+    <meta name="twitter:description" content="Portfolio de Julian Pérez – Frontend Developer.">
+    <meta name="twitter:image" content="img/Julian Programador.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="estilo.css">
-    <title>Julian Pérez | Front-end Developer</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Julian Pérez",
+      "jobTitle": "Frontend Developer",
+      "description": "Desarrollador Frontend especializado en React, TypeScript y NestJS.",
+      "email": "juliandeveloper45@gmail.com",
+      "sameAs": [
+        "https://github.com/Jjulianperez",
+        "https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/"
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-            <div class="contenido-header">
-                <h1>JP</h1>
-                <nav id="nav">
-                    <ul id="links">
-                        <li><a href="#inicio" class="seleccionado">INICIO</a></li>
-                        <li><a href="#sobremi">SOBRE MÍ</a></li>
-                        <li><a href="#servicios">SERVICIOS</a></li>
-                        <li><a href="#portfolio">PORTFOLIO</a></li>
-                        <li><a href="#contacto">CONTACTO</a></li>
-                    </ul>
-                </nav>
-                <div id="icono-nav" onclick="responsiveMenu()">
-                    <i class="fa-solid fa-bars"></i>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="contenido-header">
+            <span class="logo">Softian</span>
+            <nav id="nav">
+                <ul id="links">
+                    <li><a href="#inicio" class="seleccionado">INICIO</a></li>
+                    <li><a href="#sobremi">SOBRE MÍ</a></li>
+                    <li><a href="#experiencia">EXPERIENCIA</a></li>
+                    <li><a href="#shopian" class="nav-highlight">SHOPIAN</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div id="icono-nav" onclick="responsiveMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();responsiveMenu();}" aria-label="Abrir menú" role="button" tabindex="0">
+                <i data-lucide="menu"></i>
+            </div>
+            <div class="redes">
+                <a href="https://github.com/Jjulianperez" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i data-lucide="linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" aria-label="Presentación">
+        <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+
+        <div class="hero-contenido">
+            <div class="hero-disponible">
+                <span class="hero-disponible__dot" aria-hidden="true"></span>
+                Disponible para trabajar
+            </div>
+
+            <h1 class="hero-nombre">Soy <span>Julian Pérez</span></h1>
+
+            <p class="hero-rol">
+                <span id="typewriter" aria-label="Frontend Developer"></span><span class="cursor" aria-hidden="true">|</span>
+            </p>
+
+            <p class="hero-desc">
+                Desarrollo interfaces modernas, intuitivas y funcionales.
+                Creo soluciones tecnológicas a problemas reales para mejorar la eficiencia
+                y llevar proyectos al siguiente nivel.
+            </p>
+
+            <div class="hero-ctas">
+                <a href="#portfolio" class="btn-primary">Ver proyectos</a>
+                <a href="#experiencia" class="btn-ghost">
+                    <i data-lucide="briefcase"></i> Mi experiencia
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat__num">2</span>
+                    <span class="hero-stat__label">Pasantías</span>
                 </div>
-                <div class="redes">
-                    <a href="https://github.com/Jjulianperez" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank"><i
-                            class="fa-brands fa-linkedin"></i></a>
+                <div class="hero-stat__div" aria-hidden="true"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat__num">6+</span>
+                    <span class="hero-stat__label">Proyectos</span>
+                </div>
+                <div class="hero-stat__div" aria-hidden="true"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat__num">15+</span>
+                    <span class="hero-stat__label">Tecnologías</span>
                 </div>
             </div>
-        </header>
-    <!-- SECCION INICIO -->
-    <section id="inicio">
-        <div class="contenido">
-            <div class="presentacion">
-                <p class="bienvenida">Bienvenidos</p>
-                <h2>Soy <span>Julian Pérez</span><br>Front-end Developer</h2>
-                <p class="descripcion">
-                    Desarrollo interfaces modernas, intuitivas y funcionales.
-                    Creo soluciones tecnológicas a problemas reales para mejorar la eficiencia
-                    y llevar proyectos al siguiente nivel.
-                </p>
-                <a href="#portfolio">Ver proyectos</a>
-            </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi">
+    <!-- ===== SOBRE MI ===== -->
+    <section id="sobremi" aria-label="Sobre mí">
         <div class="contenedor-foto">
-            <img src="img/Julian tumbler2.jpg" alt="Julian Pérez">
+            <img src="img/Julian tumbler2.jpg" alt="Julian Pérez – Frontend Developer" loading="lazy">
         </div>
         <div class="sobremi">
-        <p class="titulo-seccion">Sobre mí</p>
-        <h2>Hola, soy <span>Julian Pérez</span></h2>
-        <h3>Front-end Developer</h3>
-
-        <div class="texto">
-            <p>
-                Soy desarrollador Front-end en crecimiento, con experiencia real en empresas
-                de software a medida.
-            </p>
-
-            <p>
-                Aprendo rápido, me adapto a equipos ágiles y me enfoco en escribir código limpio,
-                mantenible y escalable.
-            </p>
-
-            <p class="destacado">
-                Pensamiento crítico, análisis y resolución de problemas.
-            </p>
-
-            <p>
-                Con empatía, compromiso y ganas de aprender, puedo potenciar no solo el producto,
-                sino también al equipo de trabajo.
-            </p>
-    </div>
-
-    <a href="./media/Julian-Front-end CV.pdf" download>Descargar CV</a>
-</div>
-
+            <p class="titulo-seccion">Sobre mí</p>
+            <h2>Hola, soy <span>Julian Pérez</span></h2>
+            <h3>Frontend Developer</h3>
+            <div class="texto">
+                <p>Soy desarrollador Frontend en crecimiento, con experiencia real en empresas de software a medida.</p>
+                <p>Aprendo rápido, me adapto a equipos ágiles y me enfoco en escribir código limpio, mantenible y escalable.</p>
+                <p class="destacado">Pensamiento crítico, análisis y resolución de problemas.</p>
+                <p>Con empatía, compromiso y ganas de aprender, puedo potenciar no solo el producto, sino también al equipo.</p>
+            </div>
+            <a href="./media/Julian-Front-end CV.pdf" download class="btn-cv">
+                <i data-lucide="download"></i> Descargar CV
+            </a>
+        </div>
     </section>
 
-    <!-- SECCION SERVICIOS -->
-    <section id="servicios">
-        <h3 class="titulo-seccion">Mis Servicios</h3>
+    <!-- ===== EXPERIENCIA ===== -->
+    <section id="experiencia" aria-label="Experiencia laboral">
+        <div class="experiencia-intro">
+            <p class="titulo-seccion">Experiencia</p>
+            <h2 class="experiencia-titulo">Pasantías Profesionales</h2>
+            <p class="experiencia-subtitulo">Trabajo real en empresas de desarrollo de software</p>
+        </div>
 
+        <div class="experiencia-grid">
+
+            <!-- BEWISE -->
+            <article class="exp-card">
+                <div class="exp-card__accent"></div>
+                <div class="exp-card__header">
+                    <div class="exp-badge">
+                        <i data-lucide="badge-check"></i> Pasantía Profesional
+                    </div>
+                    <div class="exp-company">
+                        <div class="exp-company__icon">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <div class="exp-company__info">
+                            <h3 class="exp-company__name">Bewise</h3>
+                            <p class="exp-company__role">Desarrollador Frontend</p>
+                        </div>
+                    </div>
+                    <div class="exp-meta">
+                        <span><i data-lucide="calendar-days"></i> 2025</span>
+                        <span><i data-lucide="map-pin"></i> Argentina, Buenos Aires</span>
+                    </div>
+                </div>
+                <div class="exp-card__body">
+                    <ul class="exp-logros">
+                        <li><i data-lucide="check-circle-2"></i> Desarrollé desde cero una aplicación completa consumiendo la API pública de Rick and Morty</li>
+                        <li><i data-lucide="check-circle-2"></i> Implementé estado global con <strong>Zustand</strong> y paginación con <strong>TanStack Query</strong></li>
+                        <li><i data-lucide="check-circle-2"></i> Apliqué arquitectura escalable con <strong>React</strong> y <strong>TypeScript</strong></li>
+                        <li><i data-lucide="check-circle-2"></i> Validación de formularios con <strong>Formik + Yup</strong> y estilos modulares con <strong>SCSS</strong></li>
+                        <li><i data-lucide="check-circle-2"></i> Trabajé en un entorno ágil con metodologías y flujos de trabajo profesionales</li>
+                    </ul>
+                    <div class="exp-stack">
+                        <span>React</span><span>TypeScript</span><span>SCSS</span>
+                        <span>Zustand</span><span>TanStack</span><span>Axios</span>
+                        <span>Formik</span><span>Yup</span>
+                    </div>
+                </div>
+                <div class="exp-card__footer">
+                    <a href="https://github.com/Jjulianperez/Rick-and-Morty/tree/develop" target="_blank" rel="noopener noreferrer" class="exp-link">
+                        <i data-lucide="github"></i> Ver proyecto <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- KAIZEN -->
+            <article class="exp-card exp-card--purple">
+                <div class="exp-card__accent exp-card__accent--purple"></div>
+                <div class="exp-card__header">
+                    <div class="exp-badge exp-badge--purple">
+                        <i data-lucide="badge-check"></i> Pasantía Profesional
+                    </div>
+                    <div class="exp-company">
+                        <div class="exp-company__icon exp-company__icon--purple">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="exp-company__info">
+                            <h3 class="exp-company__name">Kaizen Software</h3>
+                            <p class="exp-company__role">Desarrollador Fullstack</p>
+                        </div>
+                    </div>
+                    <div class="exp-meta">
+                        <span><i data-lucide="calendar-days"></i> 2025</span>
+                        <span><i data-lucide="map-pin"></i> Argentina, SL Villa Mercedes</span>
+                    </div>
+                </div>
+                <div class="exp-card__body">
+                    <ul class="exp-logros exp-logros--purple">
+                        <li><i data-lucide="check-circle-2"></i> Desarrollé y mantuve un <strong>carrito de compras</strong> consumiendo una API privada de la empresa</li>
+                        <li><i data-lucide="check-circle-2"></i> Detecté y documenté <strong>bugs críticos</strong>, proponiendo soluciones que mejoraron la calidad del producto</li>
+                        <li><i data-lucide="check-circle-2"></i> Participé en el ciclo completo de desarrollo dentro de un equipo profesional real</li>
+                        <li><i data-lucide="check-circle-2"></i> Apliqué buenas prácticas de código limpio y organización de archivos</li>
+                    </ul>
+                    <div class="exp-stack exp-stack--purple">
+                        <span>HTML5</span><span>JavaScript</span><span>CSS3</span><span>APIs REST</span>
+                    </div>
+                </div>
+                <div class="exp-card__footer">
+                    <a href="https://github.com/Jjulianperez/Carrito-De-compras" target="_blank" rel="noopener noreferrer" class="exp-link exp-link--purple">
+                        <i data-lucide="github"></i> Ver proyecto <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section id="servicios" aria-label="Servicios">
+        <h2 class="titulo-seccion">Mis Servicios</h2>
         <div class="fila">
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-code"></i></span>
+                <span class="icono"><i data-lucide="code-2"></i></span>
                 <h4>Desarrollo Front-end</h4>
                 <hr>
                 <ul class="servicios-tag">
-                    <li>React</li>
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>Zustand</li>
-                    <li>TanStack</li>
-                    <li>SCSS/CSS</li>
-                    <li>UX / UI</li>
+                    <li>React</li><li>JavaScript</li><li>TypeScript</li>
+                    <li>Zustand</li><li>TanStack</li><li>SCSS/CSS</li><li>UX / UI</li>
                 </ul>
-                <p>
-                    Desarrollo de interfaces modernas, escalables y mantenibles,
-                    aplicando buenas prácticas.
-                </p>
+                <p>Desarrollo de interfaces modernas, escalables y mantenibles, aplicando buenas prácticas.</p>
             </div>
-
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-layer-group"></i></span>
+                <span class="icono"><i data-lucide="layers"></i></span>
                 <h4>Aplicaciones Web</h4>
                 <hr>
                 <ul class="servicios-tag">
-                    <li>React</li>
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>APIs REST</li>
-                    <li>Zustand</li>
-                    <li>TanStack</li>
-                    <li>PHP</li>
-                    <li>SQL</li>
-                    <li>Node.js</li>
-                    <li>Express</li>
+                    <li>React</li><li>TypeScript</li><li>APIs REST</li>
+                    <li>NestJS</li><li>Node.js</li><li>PostgreSQL</li><li>Prisma</li>
                 </ul>
-                <p>
-                    Diseño y desarrollo aplicaciones web funcionales y escalables, enfocadas en resolver problemas reales y potenciar la eficiencia de tu negocio.
-                </p>
+                <p>Diseño y desarrollo de aplicaciones web funcionales y escalables, enfocadas en resolver problemas reales.</p>
             </div>
-
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-pen-ruler"></i></span>
+                <span class="icono"><i data-lucide="pen-tool"></i></span>
                 <h4>Diseño de Aplicaciones</h4>
                 <hr>
                 <ul class="servicios-tag">
-                    <li>Figma</li>
-                    <li>Excalidraw</li>
-                    <li>SmartDraw</li>
-                    <li>UX / UI</li>
+                    <li>Figma</li><li>Excalidraw</li><li>SmartDraw</li><li>UX / UI</li>
                 </ul>
-                <p>
-                    Diseño y planificación de aplicaciones antes del desarrollo,flujos de usuario y estructuras claras
-                    para reducir errores y acelerar la implementación.
-                </p>
+                <p>Diseño y planificación antes del desarrollo, flujos de usuario y estructuras claras para reducir errores.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCION STACK TECNOLOGICO -->
-    <section class="contenedor-skills" id="skills">
-        <h3 class="titulo-seccion">Stack Tecnológico</h3>
+    <!-- ===== STACK ===== -->
+    <section class="contenedor-skills" id="skills" aria-label="Stack tecnológico">
+        <h2 class="titulo-seccion">Stack Tecnológico</h2>
 
-        <div class="stack-grid">
-            <div class="stack-item"><i class="fa-brands fa-react"></i><span>React</span></div>
-            <div class="stack-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-            <div class="stack-item"><i class="fa-brands fa-php"></i><span>PHP</span></div>
-            <div class="stack-item"><i class="fa-brands fa-css3-alt"></i><span>CSS / SCSS</span></div>
-            <div class="stack-item"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-            <div class="stack-item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-            <div class="stack-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
-            <div class="stack-item"><i class="fa-solid fa-layer-group"></i><span>Zustand</span></div>
-            <div class="stack-item"><i class="fa-solid fa-bolt"></i><span>TanStack</span></div>
-            <div class="stack-item"><i class="fa-solid fa-paper-plane"></i><span>PostMan</span></div>
+        <div class="stack-categorias">
+            <div class="stack-categoria">
+                <p class="stack-categoria__label">Frontend</p>
+                <div class="stack-grid">
+                    <div class="stack-item"><i data-lucide="atom"></i><span>React</span></div>
+                    <div class="stack-item"><i data-lucide="braces"></i><span>JavaScript</span></div>
+                    <div class="stack-item"><i data-lucide="file-code-2"></i><span>TypeScript</span></div>
+                    <div class="stack-item"><i data-lucide="palette"></i><span>CSS / SCSS</span></div>
+                    <div class="stack-item"><i data-lucide="wind"></i><span>Framer Motion</span></div>
+                    <div class="stack-item"><i data-lucide="play-circle"></i><span>GSAP</span></div>
+                </div>
+            </div>
+
+            <div class="stack-categoria">
+                <p class="stack-categoria__label">Backend &amp; Bases de datos</p>
+                <div class="stack-grid">
+                    <div class="stack-item"><i data-lucide="server"></i><span>Node.js</span></div>
+                    <div class="stack-item"><i data-lucide="hexagon"></i><span>NestJS</span></div>
+                    <div class="stack-item"><i data-lucide="code"></i><span>PHP</span></div>
+                    <div class="stack-item"><i data-lucide="database"></i><span>PostgreSQL</span></div>
+                    <div class="stack-item"><i data-lucide="database"></i><span>MongoDB</span></div>
+                    <div class="stack-item"><i data-lucide="database"></i><span>MySql</span></div>
+                    <div class="stack-item"><i data-lucide="database"></i><span>SQLite</span></div>
+                    <div class="stack-item"><i data-lucide="triangle"></i><span>Prisma</span></div>
+                    <div class="stack-item"><i data-lucide="database"></i><span>SQL</span></div>
+                </div>
+            </div>
+
+            <div class="stack-categoria">
+                <p class="stack-categoria__label">Herramientas &amp; IA</p>
+                <div class="stack-grid">
+                    <div class="stack-item"><i data-lucide="git-branch"></i><span>Git</span></div>
+                    <div class="stack-item"><i data-lucide="zap"></i><span>TanStack</span></div>
+                    <div class="stack-item"><i data-lucide="layers"></i><span>Zustand</span></div>
+                    <div class="stack-item"><i data-lucide="bot"></i><span>Claude AI</span></div>
+                    <div class="stack-item"><i data-lucide="sparkles"></i><span>Gemini</span></div>
+                    <div class="stack-item"><i data-lucide="message-circle"></i><span>ChatGPT</span></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SECCION PORTFOLIO -->
-    <section id="portfolio">
-        <h3 class="titulo-seccion">Proyectos</h3>
+    <!-- ===== SHOPIAN ===== -->
+    <section id="shopian" aria-label="Shopian – Mi primer SaaS">
+        <div class="shopian-inner">
+
+            <div class="shopian-info">
+                <div class="shopian-badges">
+                    <span class="shopian-badge shopian-badge--saas">
+                        <i data-lucide="rocket"></i> SaaS
+                    </span>
+                    <span class="shopian-badge shopian-badge--dev">
+                        <span class="pulse-dot" aria-hidden="true"></span> En desarrollo
+                    </span>
+                </div>
+
+                <h2 class="shopian-titulo">Shopian</h2>
+                <p class="shopian-subtitulo">Mi primera aplicación SaaS</p>
+
+                <p class="shopian-desc">
+                    Plataforma <strong>SaaS multitenancy</strong> que permite a pequeños comerciantes
+                    crear y gestionar su tienda en línea en minutos, sin conocimientos técnicos.
+                    Cada negocio obtiene un catálogo público con link único e integración directa
+                    con <strong>WhatsApp</strong> para cerrar ventas sin fricción.
+                </p>
+
+                <ul class="shopian-features">
+                    <li>
+                        <span class="shopian-feature__icon"><i data-lucide="trending-up"></i></span>
+                        <div>
+                            <strong>Dashboard con estadísticas</strong>
+                            <p>Métricas de productos, promociones y equipo en tiempo real</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="shopian-feature__icon"><i data-lucide="package"></i></span>
+                        <div>
+                            <strong>Gestión de tienda completa</strong>
+                            <p>Productos, promociones, métodos de pago y catálogo público</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="shopian-feature__icon"><i data-lucide="users"></i></span>
+                        <div>
+                            <strong>Sistema multitenancy + roles</strong>
+                            <p>Cada comercio es un Tenant independiente con Admin y Empleados</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="shopian-feature__icon"><i data-lucide="plug"></i></span>
+                        <div>
+                            <strong>API REST + suscripciones</strong>
+                            <p>NestJS con JWT, trial gratuito y planes Starter / Pro / Business</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="shopian-stack">
+                    <span>React 19</span><span>TypeScript</span><span>NestJS</span>
+                    <span>Prisma</span><span>PostgreSQL</span><span>Zustand</span>
+                    <span>GSAP</span><span>Framer Motion</span><span>JWT</span>
+                </div>
+
+                <div class="shopian-ctas">
+                    <a href="https://github.com/Jjulianperez" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <i data-lucide="github"></i> Ver repositorio
+                    </a>
+                    <a href="https://shopian-landing-git-main-julian-perezs-projects-c4ff3124.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver Landing
+                    </a>
+                    <span class="shopian-coming">
+                        <i data-lucide="clock"></i> Demo próximamente
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mockup browser CSS -->
+            <div class="shopian-mockup" aria-hidden="true">
+                <div class="mockup-browser">
+                    <div class="mockup-bar">
+                        <span class="mockup-dot mockup-dot--red"></span>
+                        <span class="mockup-dot mockup-dot--yellow"></span>
+                        <span class="mockup-dot mockup-dot--green"></span>
+                        <div class="mockup-url">shopian.app/dashboard</div>
+                    </div>
+                    <div class="mockup-screen">
+                        <div class="mockup-sidebar">
+                            <div class="mockup-logo-small">S</div>
+                            <div class="mockup-nav-item mockup-nav-item--active"></div>
+                            <div class="mockup-nav-item"></div>
+                            <div class="mockup-nav-item"></div>
+                            <div class="mockup-nav-item"></div>
+                        </div>
+                        <div class="mockup-content">
+                            <div class="mockup-header-row">
+                                <div class="mockup-title-bar"></div>
+                                <div class="mockup-btn-small"></div>
+                            </div>
+                            <div class="mockup-stats-row">
+                                <div class="mockup-stat-card mockup-stat-card--1"></div>
+                                <div class="mockup-stat-card mockup-stat-card--2"></div>
+                                <div class="mockup-stat-card mockup-stat-card--3"></div>
+                            </div>
+                            <div class="mockup-chart">
+                                <div class="mockup-chart__bars">
+                                    <div class="mockup-bar-item" style="height:40%"></div>
+                                    <div class="mockup-bar-item" style="height:65%"></div>
+                                    <div class="mockup-bar-item" style="height:45%"></div>
+                                    <div class="mockup-bar-item" style="height:80%"></div>
+                                    <div class="mockup-bar-item" style="height:55%"></div>
+                                    <div class="mockup-bar-item" style="height:90%"></div>
+                                    <div class="mockup-bar-item mockup-bar-item--accent" style="height:70%"></div>
+                                </div>
+                            </div>
+                            <div class="mockup-table">
+                                <div class="mockup-row mockup-row--header"></div>
+                                <div class="mockup-row"></div>
+                                <div class="mockup-row"></div>
+                                <div class="mockup-row"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" aria-label="Proyectos">
+        <h2 class="titulo-seccion">Proyectos</h2>
+        <p class="portfolio-subtitulo">Hacé clic en un proyecto para ver los detalles</p>
 
         <div class="portfolio-grid">
 
-            <a href="https://github.com/Jjulianperez/Rick-and-Morty/tree/develop"
-            target="_blank"
-            class="proyecto-card">
-
-                <img src="img/Proyecto Rick and Morty.png" alt="Rick and Morty App">
-
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Rick and Morty App"
+                data-title="Rick and Morty App"
+                data-desc="Aplicación web full-featured que consume la API pública de Rick and Morty. Implementé filtros avanzados por nombre, especie y estado, estado global con Zustand, paginación con TanStack Query y carga eficiente de datos. Desarrollada durante mi pasantía en Bewise aplicando arquitectura escalable y buenas prácticas."
+                data-stack='["React","TypeScript","SCSS","Zustand","TanStack","Axios","JsonServer","Formik","Yup"]'
+                data-github="https://github.com/Jjulianperez/Rick-and-Morty/tree/develop"
+                data-badge="Pasantía Bewise"
+                data-img="img/Proyecto Rick and Morty.png">
+                <img src="img/Proyecto Rick and Morty.png" alt="Rick and Morty App" loading="lazy">
                 <div class="proyecto-overlay">
+                    <div class="proyecto-badge"><i data-lucide="briefcase"></i> Pasantía Bewise</div>
                     <h4>Rick and Morty App</h4>
-
-                    <p class="descripcion">
-                        Aplicación web que consume una API externa,
-                        con filtros avanzados, estado global y carga eficiente de datos.
-                    </p>
-                    <p class="destacado">Proyecto en mi pasantía en Bewise</p>
-
-                    <div class="techs">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>SCSS</span>
-                        <span>Zustand</span>
-                        <span>TanStack</span>
-                        <span>SCSS</span>
-                        <span>Axios</span>
-                        <span>JsonServer</span>
-                        <span>Formik</span>
-                        <span>yup</span>
-                    </div>
+                    <p class="descripcion">Filtros avanzados, estado global y paginación con TanStack Query.</p>
+                    <div class="techs"><span>React</span><span>TypeScript</span><span>Zustand</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
                 </div>
+            </div>
 
-            </a>
-            <a href="https://github.com/Jjulianperez/Voto-Electronico"
-            target="_blank"
-            class="proyecto-card">
-
-                <img src="img/Proyecto Voto Electronico.png" alt="Voto Electronico">
-
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Carrito de Compras"
+                data-title="Carrito de Compras"
+                data-desc="Proyecto desarrollado en mi pasantía en Kaizen Software. Consumí una API privada con endpoints definidos por el equipo, detecté y documenté bugs críticos, y propuse soluciones concretas. Participé en el ciclo completo de desarrollo dentro de un equipo profesional."
+                data-stack='["HTML5","JavaScript","CSS3","APIs REST"]'
+                data-github="https://github.com/Jjulianperez/Carrito-De-compras"
+                data-badge="Pasantía Kaizen"
+                data-img="img/Proyecto Carrito.png">
+                <img src="img/Proyecto Carrito.png" alt="Carrito de Compras" loading="lazy">
                 <div class="proyecto-overlay">
-                    <h4>Voto Electronico</h4>
-                    <p class="descripcion">
-                        Aplicación web que permite a los alumnos votar al presidente del Centro de Estudiantes,
-                        con gráficos y conteo automático, manejo de datos CRUD con roles de administrador y alumno.
-                    </p>
-
-                    <div class="techs">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                        <span>Node.js</span>
-                        <span>SQLITE</span>
-                        <span>Express</span>
-                        <span>ByCrypt</span>
-                        <span>xlsx</span>
-                        <span>Cors</span>
-                        <span>React-router-dom</span>
-                        <span>Multer</span>
-                    </div>
+                    <div class="proyecto-badge proyecto-badge--purple"><i data-lucide="briefcase"></i> Pasantía Kaizen</div>
+                    <h4>Carrito de Compras</h4>
+                    <p class="descripcion">API privada, detección de bugs y desarrollo en equipo profesional.</p>
+                    <div class="techs"><span>HTML5</span><span>JavaScript</span><span>CSS3</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
                 </div>
+            </div>
 
-            </a>
-            <a href="https://github.com/Jjulianperez/TurneroMaster"
-            target="_blank"
-            class="proyecto-card">
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Voto Electrónico"
+                data-title="Voto Electrónico"
+                data-desc="Sistema de votación estudiantil para el Centro de Estudiantes. Permite votar al presidente, con gráficos y conteo automático en tiempo real. Incluye roles: administrador (gestión total, importación con Excel) y alumno (votación segura). Operaciones CRUD completas."
+                data-stack='["React","JavaScript","CSS","Node.js","SQLite","Express","ByCrypt","xlsx","Cors","React Router Dom","Multer"]'
+                data-github="https://github.com/Jjulianperez/Voto-Electronico"
+                data-img="img/Proyecto Voto Electronico.png">
+                <img src="img/Proyecto Voto Electronico.png" alt="Voto Electrónico" loading="lazy">
+                <div class="proyecto-overlay">
+                    <h4>Voto Electrónico</h4>
+                    <p class="descripcion">Sistema de votación con roles, gráficos y conteo automático.</p>
+                    <div class="techs"><span>React</span><span>Node.js</span><span>SQLite</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
+                </div>
+            </div>
 
-                <img src="img/Proyecto Turnero master.png" alt="Turnero master">
-
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Turnero Master"
+                data-title="Turnero Master"
+                data-desc="Aplicación web para gestión de turnos en una barbería. Los usuarios pueden reservar turnos por fecha, buscar disponibilidad y cancelar citas. Cuenta con buscador, panel de administración y base de datos MongoDB."
+                data-stack='["React","JavaScript","CSS","Dotenv","Cors","Express","Mongoose","React DOM"]'
+                data-github="https://github.com/Jjulianperez/TurneroMaster"
+                data-img="img/Proyecto Turnero master.png">
+                <img src="img/Proyecto Turnero master.png" alt="Turnero Master" loading="lazy">
                 <div class="proyecto-overlay">
                     <h4>Turnero Master</h4>
-
-                    <p class="descripcion">
-                        Aplicación web que permite a los usuarios sacar turnos para una barberia,
-                        con buscador de turnos y boton de ,.
-                    </p>
-                    <div class="techs">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                        <span>Dotenv</span>
-                        <span>Cors</span>
-                        <span>Express</span>
-                        <span>Mongoose</span>
-                        <span>React-dom</span>
-                    </div>
+                    <p class="descripcion">Gestión de turnos para barbería con buscador y panel de admin.</p>
+                    <div class="techs"><span>React</span><span>Express</span><span>MongoDB</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
                 </div>
+            </div>
 
-            </a>
-            <a href="https://github.com/Jjulianperez/Clinica-System"
-            target="_blank"
-            class="proyecto-card">
-
-                <img src="img/Proyecto Clinica System.png" alt="clinica system">
-
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Clinica System"
+                data-title="Clinica System"
+                data-desc="Sistema de gestión clínica con dos roles: paciente y médico. Los pacientes pueden buscar médicos, reservar turnos y ver historial. Los médicos tienen agenda propia y acceso al historial de pacientes. Filtros avanzados y CRUD completo."
+                data-stack='["HTML5","CSS","JavaScript","PHP","MySQL"]'
+                data-github="https://github.com/Jjulianperez/Clinica-System"
+                data-img="img/Proyecto Clinica System.png">
+                <img src="img/Proyecto Clinica System.png" alt="Clinica System" loading="lazy">
                 <div class="proyecto-overlay">
                     <h4>Clinica System</h4>
-
-                    <p class="descripcion">
-                        Aplicación web que permite ayudar a los usuarios a sacar turnos para una clinica,
-                        con buscador de medicos ,historial de pasientes, agenda para el rol de Medico y filtros.
-                    </p>
-
-                    <div class="techs">
-                        <span>HTML:5</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>MySql</span>
-                    </div>
+                    <p class="descripcion">Sistema médico con roles, agenda e historial de pacientes.</p>
+                    <div class="techs"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
                 </div>
+            </div>
 
-            </a>
-            <a href="https://github.com/Jjulianperez/Bot-Telegram-Casino"
-            target="_blank"
-            class="proyecto-card">
-
-                <img src="img/Bot relegram casino.png" alt="Rick and Morty App">
-
+            <div class="proyecto-card" role="button" tabindex="0" aria-label="Ver detalles de Bot Asistente de Casino"
+                data-title="Bot Asistente de Casino"
+                data-desc="Bot de Telegram que automatiza la recopilación de resultados de jugadores en un casino. Evita que el cliente anote datos manualmente en Excel. El bot recopila, organiza y envía resultados a un chat privado en tiempo real."
+                data-stack='["JavaScript","Node.js","Telegraf"]'
+                data-github="https://github.com/Jjulianperez/Bot-Telegram-Casino"
+                data-img="img/Bot relegram casino.png">
+                <img src="img/Bot relegram casino.png" alt="Bot Asistente de Casino" loading="lazy">
                 <div class="proyecto-overlay">
                     <h4>Bot Asistente de Casino</h4>
-                    <p class="descripcion">
-                        Creé un bot de Telegram que recopila automáticamente los resultados de los jugadores y los envía a un chat privado, evitando que mi cliente pierda tiempo buscando y anotando datos en su Excel.
-                    </p>
-
-                    <div class="techs">
-                        <span>JavaScript</span>
-                        <span>Node.js</span>
-                        <span>Telegraf</span>
-                    </div>
+                    <p class="descripcion">Bot que automatiza resultados, eliminando trabajo manual con Excel.</p>
+                    <div class="techs"><span>Node.js</span><span>Telegraf</span><span>JavaScript</span></div>
+                    <span class="ver-mas">Ver detalles <i data-lucide="arrow-right"></i></span>
                 </div>
-
-            </a>
-            <a href="https://github.com/Jjulianperez/Carrito-De-compras"
-            target="_blank"
-            class="proyecto-card">
-
-                <img src="img/Proyecto Carrito.png  " alt="Rick and Morty App">
-
-                <div class="proyecto-overlay">
-                   <h4>Carrito de Compras</h4>
-                    <p class="descripcion">
-                        Proyecto desarrollado en una pasantía de Kaizen Software,
-                        enfocado en detectar errores y proponer soluciones,
-                        consumiendo una API privada con endpoints definidos por la empresa.
-                    </p>
-                    <p class="destacado">Proyecto de pasantía – Kaizen Software</p>
-                    <div class="techs">
-                        <span>Html</span>
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                    </div>
-                </div>
-
-            </a>
+            </div>
 
         </div>
     </section>
 
-    <!-- SECCION CONTACTO -->
-    <section id="contacto">
-        <h3 class="titulo-seccion">Contacto</h3>
-
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" aria-label="Contacto">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <p class="contacto-subtitulo">¿Tenés un proyecto en mente? Hablemos.</p>
         <div class="contacto-grid">
-
-            <a href="https://github.com/Jjulianperez" target="_blank" class="contacto-card">
-                <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/Jjulianperez" target="_blank" rel="noopener noreferrer" class="contacto-card">
+                <i data-lucide="github"></i>
                 <h4>GitHub</h4>
                 <p>Ver mis proyectos y repositorios</p>
             </a>
-
             <a href="mailto:juliandeveloper45@gmail.com" class="contacto-card">
-                <i class="fa-solid fa-envelope"></i>
+                <i data-lucide="mail"></i>
                 <h4>Email</h4>
                 <p>juliandeveloper45@gmail.com</p>
             </a>
-
-            <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank" class="contacto-card">
-                <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank" rel="noopener noreferrer" class="contacto-card">
+                <i data-lucide="linkedin"></i>
                 <h4>LinkedIn</h4>
                 <p>Conectemos profesionalmente</p>
             </a>
-
         </div>
     </section>
 
-
-   <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-contenido">
-            <p>© 2025 <span>Julian Pérez</span>. Todos los derechos reservados.</p>
-
+            <p>© 2026 <span>Julian Pérez</span>. Todos los derechos reservados.</p>
             <div class="redes">
-                <a href="https://github.com/Jjulianperez" target="_blank" aria-label="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
+                <a href="https://github.com/Jjulianperez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/julian-p%C3%A9rez-770b48333/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- ===== MODAL ===== -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-container" id="modal-container">
+            <button class="modal-close" id="modal-close-btn" aria-label="Cerrar modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-img-wrapper">
+                <img id="modal-img" src="" alt="" loading="lazy">
+                <div class="modal-img-gradient"></div>
+                <div id="modal-badge-el" class="modal-project-badge" style="display:none"></div>
+            </div>
+            <div class="modal-body">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <p id="modal-desc" class="modal-desc"></p>
+                <div class="modal-stack-label">
+                    <i data-lucide="layers"></i> Tecnologías usadas
+                </div>
+                <div id="modal-stack" class="modal-stack"></div>
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="modal-github-btn">
+                    <i data-lucide="github"></i>
+                    Ver en GitHub
+                    <i data-lucide="external-link"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver al inicio">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Iconos SVG inline — cero dependencias, funciona siempre -->
+    <script>
+    (function(){
+        var I={
+            'menu':'<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
+            'briefcase':'<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+            'badge-check':'<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>',
+            'building-2':'<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>',
+            'calendar-days':'<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
+            'map-pin':'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+            'check-circle-2':'<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+            'code-2':'<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>',
+            'arrow-right':'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+            'download':'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+            'layers':'<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>',
+            'pen-tool':'<path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/>',
+            'file-code-2':'<path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="m9 18 3-3-3-3"/><path d="m5 12-3 3 3 3"/>',
+            'wind':'<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>',
+            'play-circle':'<circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>',
+            'hexagon':'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>',
+            'database':'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+            'triangle':'<path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>',
+            'zap':'<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+            'bot':'<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+            'sparkles':'<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>',
+            'message-circle':'<path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>',
+            'rocket':'<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
+            'trending-up':'<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+            'package':'<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+            'users':'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+            'plug':'<path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/>',
+            'clock':'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+            'mail':'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+            'x':'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+            'external-link':'<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+            'chevron-up':'<path d="m18 15-6-6-6 6"/>',
+            'github':'<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>',
+            'linkedin':'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>',
+            'atom':'<circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/>',
+            'braces':'<path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/>',
+            'palette':'<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>',
+            'server':'<rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/>',
+            'code':'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+            'git-branch':'<line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>'
+        };
+        var ns='http://www.w3.org/2000/svg';
+        document.querySelectorAll('[data-lucide]').forEach(function(el){
+            var name=el.getAttribute('data-lucide');
+            if(!I[name])return;
+            var svg=document.createElementNS(ns,'svg');
+            svg.setAttribute('viewBox','0 0 24 24');
+            svg.setAttribute('fill','none');
+            svg.setAttribute('stroke','currentColor');
+            svg.setAttribute('stroke-width','2');
+            svg.setAttribute('stroke-linecap','round');
+            svg.setAttribute('stroke-linejoin','round');
+            svg.classList.add('ico');
+            svg.setAttribute('aria-hidden','true');
+            svg.innerHTML=I[name];
+            el.replaceWith(svg);
+        });
+    })();
+    </script>
     <script src="script.js"></script>
 </body>
-
 </html>
