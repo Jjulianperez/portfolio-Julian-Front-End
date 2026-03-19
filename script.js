@@ -1,12 +1,12 @@
 /* ================== SCROLL REVEAL + STAGGER ================== */
 const revealTargets = document.querySelectorAll(
-    '.servicio, .stack-item, .proyecto-card, .contacto-card, .exp-card, .shopian-features li'
+    '.stack-item, .proyecto-card, .contacto-card, .exp-card, .edu-card, .curso-card, .shopian-features li'
 );
 
 // Stagger: asignar transition-delay inline a elementos del mismo tipo
 const staggerSelectors = [
-    '.servicio', '.stack-item', '.proyecto-card',
-    '.contacto-card', '.exp-card', '.shopian-features li'
+    '.stack-item', '.proyecto-card',
+    '.contacto-card', '.exp-card', '.edu-card', '.curso-card', '.shopian-features li'
 ];
 
 staggerSelectors.forEach(sel => {
@@ -17,9 +17,9 @@ staggerSelectors.forEach(sel => {
 
 // Reveal individual (secciones grandes)
 const revealSections = document.querySelectorAll(
-    '#sobremi .contenedor-foto, #sobremi .sobremi, .experiencia-intro, .shopian-info, .shopian-mockup, ' +
-    '#servicios h2, #portfolio h2, #portfolio .portfolio-subtitulo, ' +
-    '#contacto h2, #contacto .contacto-subtitulo, .contenedor-skills h2'
+    '#sobremi .contenedor-foto, #sobremi .sobremi, .experiencia-intro, .shopian-info, .shopian-showcase, ' +
+    '#educacion h2, #portfolio h2, #portfolio .portfolio-subtitulo, ' +
+    '#contacto h2, #contacto .contacto-subtitulo, .contacto-form, .contenedor-skills h2'
 );
 
 [...revealTargets, ...revealSections].forEach(el => el.classList.add('reveal'));
@@ -202,3 +202,69 @@ container.addEventListener('keydown', e => {
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
+
+
+/* ================== FORMULARIO DE CONTACTO ================== */
+// Para activar: creá una cuenta gratis en formspree.io, copiá tu Form ID
+// y reemplazá YOUR_FORM_ID en el atributo action del <form> en el HTML.
+
+const contactForm = document.getElementById('contacto-form');
+const formStatus  = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        // Limpiar estados anteriores
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+        contactForm.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+
+        // Validación básica
+        let valid = true;
+        contactForm.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('invalid');
+                valid = false;
+            }
+        });
+        if (!valid) {
+            formStatus.textContent = 'Completá los campos requeridos.';
+            formStatus.className = 'form-status error';
+            return;
+        }
+
+        const btn     = contactForm.querySelector('.form-submit');
+        const btnText = btn.querySelector('.form-submit-text');
+        btn.disabled  = true;
+        btnText.textContent = 'Enviando...';
+
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                formStatus.textContent = '✓ ¡Mensaje enviado! Te respondo pronto.';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+            } else {
+                const data = await res.json();
+                throw new Error(data?.errors?.[0]?.message || 'Error del servidor');
+            }
+        } catch {
+            formStatus.textContent = '✗ No se pudo enviar. Escribime a juliandeveloper45@gmail.com';
+            formStatus.className = 'form-status error';
+        } finally {
+            btn.disabled = false;
+            btnText.textContent = 'Enviar mensaje';
+        }
+    });
+
+    // Quitar clase invalid al escribir
+    contactForm.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('input', () => field.classList.remove('invalid'));
+    });
+}
