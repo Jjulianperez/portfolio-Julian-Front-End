@@ -145,6 +145,7 @@ const mTitle      = document.getElementById('modal-title');
 const mDesc       = document.getElementById('modal-desc');
 const mStack      = document.getElementById('modal-stack');
 const mGithub     = document.getElementById('modal-github');
+const mDemo       = document.getElementById('modal-demo');
 
 let lastFocus = null;
 
@@ -154,6 +155,7 @@ function openModal(card) {
     mTitle.textContent = card.dataset.title || '';
     mDesc.textContent  = card.dataset.desc  || '';
     mGithub.href       = card.dataset.github || '#';
+    mDemo.href         = card.dataset.demo || '#';
 
     const badge = card.dataset.badge || '';
     mBadge.textContent  = badge;
